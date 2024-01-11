@@ -1,26 +1,24 @@
 
-public class Calendar1
+public class Calendar
 	{
 		static int dayOfMonth = 1;   
 	    static int month = 1;
 	    static int year = 1900;
 	    static int dayOfWeek = 2; 
-		static int count_for_sunday = 0;
-		public static void main(String[] args)
-		{
-			int debug_counter = 0;
-			while(year < 2000)
+		public static void main(String[] args) {
+            
+            int year_user=Integer.parseInt(args[0]);			
+			while(year < year_user) {
+			  advance();
+			}  
+            if(year == year_user)
 			{
-				advance();
-				debug_counter++;
-				if(debug_counter == 1)
-				{
-					break;
-				}
-			
+			advance1();
 			}
-		    System.out.print("during the 20th century, " + count_for_sunday + " sundays fell on");
-		}	 
+			
+									
+		}
+		
 		
 			public static void advance()
 			{
@@ -28,22 +26,29 @@ public class Calendar1
 				{
 					for(dayOfMonth =1; dayOfMonth<=nDaysInMonth(month,year); dayOfMonth++)
 					{
-						if(dayOfWeek == 1)
-						{
-							System.out.println(dayOfMonth + "/" + month + "/" + year + "sunday");
-						}
-						else{
-						System.out.println(dayOfMonth + "/" + month + "/" + year);
-						}
-						if((dayOfWeek == 1) &&(dayOfMonth == 1))
-						{
-							count_for_sunday++;
-						}
 						dayOfWeek = (dayOfWeek+1) % 7;
 					}
 				}
 				year++;
 			}
+			
+			public static void advance1(){
+			for(month =1 ; month<=12; month++)
+				{
+					for(dayOfMonth =1; dayOfMonth<=nDaysInMonth(month,year); dayOfMonth++)
+					{
+						if(dayOfWeek == 1)
+						{
+							System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
+						}
+						else{
+						System.out.println(dayOfMonth + "/" + month + "/" + year);
+						}
+						dayOfWeek = (dayOfWeek+1) % 7;
+					}
+				}
+			}
+			
 			
 			
 			public static boolean isLeapYear(int year)
