@@ -13,13 +13,9 @@ public class Calendar1
 			{
 				advance();
 				debug_counter++;
-				if(debug_counter == 1)
-				{
-					break;
-				}
 			
 			}
-		    System.out.print("during the 20th century, " + count_for_sunday + " sundays fell on");
+		    System.out.print("during the 20th century, " + count_for_sunday + " Sundays fell on the first day of the month");
 		}	 
 		
 			public static void advance()
@@ -30,7 +26,7 @@ public class Calendar1
 					{
 						if(dayOfWeek == 1)
 						{
-							System.out.println(dayOfMonth + "/" + month + "/" + year + "sunday");
+							System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 						}
 						else{
 						System.out.println(dayOfMonth + "/" + month + "/" + year);
